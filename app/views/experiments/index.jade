@@ -1,0 +1,24 @@
+extends ../layout
+
+block content
+  h2 Experiments
+
+  table.table.table-bordered.table-striped.table-hover
+    thead
+      tr
+        th Experiment Name
+        th Running?
+        th Visitors
+        th
+    tbody
+      each experiment in experiments
+        tr
+          td
+            a(href="/experiments/#{experiment.id}")= experiment.name
+          td= experiment.running ? 'Yes' : 'No'
+          td 0
+          td
+            button.btn.btn-mini
+              i.icon.icon-play
+              | Start
+
